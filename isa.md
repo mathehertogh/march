@@ -1,7 +1,12 @@
 march
 =====
 
-This document describes Mathé's instruction set architecture: _march_.
+This document describes Mathé's instruction set architecture: _march_. It adopts
+the Von Neumann execution model: there is an instruction pointer (IP) register
+holding the value of the currently executing instruction. Instructions are
+stored in memory and executed one by one.
+Additionally march has 16 general purpose registers: `$r0`, `$r1`, ..., `$r31`.
+All registers, including the IP, are 32 bits wide.
 
 | instruction | description        | type         | encoding                |
 |-------------|--------------------|--------------|-------------------------|
