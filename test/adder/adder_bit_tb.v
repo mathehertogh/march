@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-`include "src/adder_bit.v"
+`include "src/adder/adder_bit.v"
 
 module adder_bit_tb;
 

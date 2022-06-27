@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-`include "src/adder_byte.v"
+`include "src/adder/adder_byte.v"
 
 module adder_byte_tb;
 

@@ -1,4 +1,4 @@
-`include "src/adder_byte.v"
+`include "src/adder/adder_byte.v"
 
 module adder_word(	input wire [31:0] a,
 			input wire [31:0] b,
