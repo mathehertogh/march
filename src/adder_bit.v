@@ -1,8 +1,8 @@
-module adder(	input a,
-		input b,
-		input carry_in,
-		output sum,
-		output carry_out);
+module adder_bit(	input a,
+			input b,
+			input carry_in,
+			output sum,
+			output carry_out);
 
 	wire m, ab, ac, bc;
 
