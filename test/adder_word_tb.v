@@ -1,18 +1,18 @@
 `timescale 1ns/1ps
 
-`include "src/adder_byte.v"
+`include "src/adder_word.v"
 
-module adder_byte_tb;
+module adder_word_tb;
 
-	reg [7:0] a, b;
+	reg [31:0] a, b;
 	reg c_i;
-	wire [7:0] sum;
+	wire [31:0] sum;
 	wire c_o;
-	reg [7:0] correct_sum;
+	reg [31:0] correct_sum;
 	reg correct_c_o;
-	reg [17:0] i;
+	reg [31:0] i;
 
-	adder_byte dut(
+	adder_word dut(
 		.a(a),
 		.b(b),
 		.carry_in(c_i),
@@ -26,8 +26,10 @@ module adder_byte_tb;
 		$dumpvars;
 		`endif
 
-		for (i = 0; i < 256*256*2; i = i+1) begin
-			{a, b, c_i} = i;
+		for (i = 0; i < 1024; i = i+1) begin
+			a = $random;
+			b = $random;
+			c_i = $random;
 			{correct_c_o, correct_sum} = a + b + c_i;
 			#1
 			if (!(c_o === correct_c_o && sum === correct_sum)) begin

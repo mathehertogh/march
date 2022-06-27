@@ -18,6 +18,11 @@ module adder_bit_tb;
 	);
 
 	initial begin
+		`ifdef WAVE
+		$dumpfile("wave.vcd");
+		$dumpvars;
+		`endif
+
 		for (i = 0; i < 8; i = i+1) begin
 			{a, b, c_i} = i;
 			#1
